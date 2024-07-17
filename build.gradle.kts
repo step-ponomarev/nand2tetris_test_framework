@@ -32,7 +32,6 @@ tasks.jar {
     archiveBaseName.set(artifactName)
 }
 
-// Задача build будет зависеть от jar
 tasks.build {
     dependsOn(tasks.jar)
 }
