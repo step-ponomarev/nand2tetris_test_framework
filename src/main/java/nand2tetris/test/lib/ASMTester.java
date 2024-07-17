@@ -10,7 +10,7 @@ public final class ASMTester {
     private static final String CMP_FILE_EXTENSION = ".cmp";
     private static final String ASM_FILE_EXTENSION = ".asm";
 
-    public static void fireTestScript(Path testScriptPath) throws ASMTranslationException {
+    public static void executeTestScript(Path testScriptPath) throws ASMTranslationException {
         if (Files.notExists(testScriptPath)) {
             throw new IllegalArgumentException("Script file does not exist: " + testScriptPath);
         }
@@ -24,7 +24,6 @@ public final class ASMTester {
         testName = testName.substring(0, testName.length() - 4);
 
         final Path testDir = testScriptPath.getParent();
-
         final Path cmpFile = testDir.resolve(testName + CMP_FILE_EXTENSION);
         if (Files.notExists(cmpFile)) {
             throw new IllegalStateException("Compare file does not exist: " + cmpFile);

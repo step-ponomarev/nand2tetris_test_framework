@@ -12,21 +12,21 @@ public final class ASMTesterTest {
 
     @Test
     public void testAsmFile() throws ASMTranslationException {
-        ASMTester.fireTestScript(
+        ASMTester.executeTestScript(
                 RESOURCES_DIR.resolve("FibonacciElement/FibonacciElement.tst")
         );
     }
 
     @Test
     public void testAsmNoCmpFile() {
-        Assertions.assertThrows(IllegalStateException.class, () -> ASMTester.fireTestScript(
+        Assertions.assertThrows(IllegalStateException.class, () -> ASMTester.executeTestScript(
                 RESOURCES_DIR.resolve("FibonacciElement_no_cmp/FibonacciElement.tst")
         ));
     }
 
     @Test
     public void testAsmNoAsmFile() {
-        Assertions.assertThrows(IllegalStateException.class, () -> ASMTester.fireTestScript(
+        Assertions.assertThrows(IllegalStateException.class, () -> ASMTester.executeTestScript(
                 RESOURCES_DIR.resolve("FibonacciElement_no_asm/FibonacciElement.tst")
         ));
     }
