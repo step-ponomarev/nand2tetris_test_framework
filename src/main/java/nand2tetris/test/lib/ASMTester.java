@@ -5,12 +5,12 @@ import java.nio.file.Path;
 
 import Hack.CPUEmulator.CPUEmulator;
 
-public final class CPUEmulatorTester {
+public final class ASMTester {
     private static final String TEST_SCRIPT_FILE_EXTENSION = ".tst";
     private static final String CMP_FILE_EXTENSION = ".cmp";
     private static final String ASM_FILE_EXTENSION = ".asm";
 
-    public static void fireTestScript(Path testScriptPath) throws ControllerException {
+    public static void fireTestScript(Path testScriptPath) throws ASMTranslationException {
         if (Files.notExists(testScriptPath)) {
             throw new IllegalArgumentException("Script file does not exist: " + testScriptPath);
         }
@@ -36,10 +36,9 @@ public final class CPUEmulatorTester {
         }
 
         try {
-
             new HackErrorThrowController(new CPUEmulator(), path);
         } catch (Exception e) {
-            throw new ControllerException(e.getMessage());
+            throw new ASMTranslationException(e.getMessage());
         }
     }
 }
