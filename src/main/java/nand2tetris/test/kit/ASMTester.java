@@ -1,4 +1,4 @@
-package nand2tetris.test.lib;
+package nand2tetris.test.kit;
 
 import java.nio.file.Files;
 import java.nio.file.Path;

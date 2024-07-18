@@ -1,4 +1,4 @@
-package nand2tetris.test.lib;
+package nand2tetris.test.kit;
 
 import Hack.Controller.HackController;
 import Hack.Controller.HackSimulator;

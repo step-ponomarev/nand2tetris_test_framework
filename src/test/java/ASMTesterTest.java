@@ -4,8 +4,8 @@ import java.nio.file.Paths;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import nand2tetris.test.lib.ASMTester;
-import nand2tetris.test.lib.ASMTranslationException;
+import nand2tetris.test.kit.ASMTester;
+import nand2tetris.test.kit.ASMTranslationException;
 
 public final class ASMTesterTest {
     public static final Path RESOURCES_DIR = Paths.get("src", "test", "resources");
